@@ -1,7 +1,10 @@
 class JobsController < ApplicationController
-    before_action :find_jobs_id, only: [:edit, :update, :destroy]
+    before_action :find_jobs_id, only: [:edit, :update, :destroy, :show]
+    before_action :authenticate_user!, except: [:index]
     def index
-        @jobs = Job.all.desc_by_created.page(params[:page]).per(10)
+        @jobs = Job.all.ishidden.desc_by_created.page(params[:page]).per(10)
+    end
+    def show       
     end
     def new
         @job = Job.new

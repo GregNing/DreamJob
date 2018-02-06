@@ -47,6 +47,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'awesome_rails_console'
+  gem 'annotate'
 end
 
 gem 'pg', '~> 0.18'

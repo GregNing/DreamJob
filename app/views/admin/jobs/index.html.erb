@@ -4,7 +4,7 @@
 <h3>求職列表
 
 <div class="pull-right">
-    <%= link_to("New Jobs", new_job_path, class: "btn btn-primary pull-right") %>
+    <%= link_to("New Jobs", new_admin_job_path, class: "btn btn-primary pull-right") %>
 </div>
 </h3>
 </div>
@@ -32,8 +32,8 @@
     <td><%=  job.wage_lower_bound %></td>
     <td><%=  job.created_at %></td>
         <td>                
-            <%= link_to("Edit", edit_job_path(job), class: "btn btn-xs btn-info")%>
-            <%= link_to("Delete", job_path(job),    class: "btn btn-xs btn-danger", 
+            <%= link_to("Edit", edit_admin_job_path(job), class: "btn btn-xs btn-info")%>
+            <%= link_to("Delete", admin_job_path(job),    class: "btn btn-xs btn-danger", 
                         method: :delete, data: { confirm: "Are you sure?" } )%>
         </td>
         </tr>
