@@ -18,3 +18,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+.flashbar{
+    position: relative;
+    z-index: 1;
+    margin: -20px auto; 
+    opacity: 0.8;
+}
