@@ -21,4 +21,13 @@ class Job < ApplicationRecord
     scope :desc_by_wage_lower_bound, ->{ order("wage_lower_bound DESC") }
     scope :desc_by_wage_upper_bound, ->{ order("wage_upper_bound DESC") }
     scope :ishidden, ->{ where(is_hidden: false) }
+    belongs_to :user
+    def publish!
+        self.is_hidden = false
+        self.save
+    end
+    def hide!
+        self.is_hidden = true
+        self.save
+    end
 end

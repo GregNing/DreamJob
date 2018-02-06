@@ -4,7 +4,7 @@
 <h3>求職列表
 
 <div class="pull-right">
-    <%= link_to("New Jobs", new_admin_job_path, class: "btn btn-primary pull-right") %>
+    <%= link_to("新增工作機會", new_admin_job_path, class: "btn btn-primary pull-right") %>
 </div>
 </h3>
 </div>
@@ -25,6 +25,14 @@
     <% @jobs.each do |job| %>
         <tr>            
     <td>
+    
+    <% if job.is_hidden? %>
+        <%= link_to ishiddenhelper(job), publish_admin_job_path(job) , method: :post%>
+    <% else %>
+        
+        <%= link_to ishiddenhelper(job), hide_admin_job_path(job) , method: :post%>        
+    <% end %>
+    
     <%= link_to(job.title, job_path(job)) %>
     </td>
     <td><%=  render_jobs_description(job) %></td>

@@ -13,6 +13,7 @@ class Admin::JobsController < ApplicationController
     end
     def create
         @job = Job.new(jobs_params)
+        @job.user = current_user
         if @job.save
             redirect_to admin_jobs_path,notice: "新增#{@job.title}成功!"
         else
@@ -33,12 +34,28 @@ class Admin::JobsController < ApplicationController
         @job.destroy
         redirect_to admin_jobs_path, alert: "刪除#{@Job.title}成功！"        
     end
+    def publish
+        if @job.is_hidden?          
+          @job.publish!
+          redirect_to admin_jobs_path ,notice: "#{@job.title}發布成功!"
+        else            
+        redirect_to admin_jobs_path ,alert: "已經隱藏!"
+        end        
+    end
+    def hide        
+        if @job.is_hidden?
+            redirect_to admin_jobs_path ,alert: "已經發布!"
+        else            
+            @job.hide!
+            redirect_to admin_jobs_path, warning: "#{@job.title}隱藏成功!"
+        end
+    end
     private
     def find_jos_id
         @job = Job.find(params[:id])
     end
     def jobs_params
         params.require(:job).permit(:title,:description,:wage_upper_bound,
-        :wage_lower_bound,:contact_email)
+        :wage_lower_bound,:contact_email, :is_hidden)
     end
 end

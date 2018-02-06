@@ -11,6 +11,7 @@ class JobsController < ApplicationController
     end
     def create
         @job = Job.new(jobs_params)
+        @job.user = current_user
         if @job.save
             redirect_to root_path, notice: "新增#{@job.title}成功"
         else

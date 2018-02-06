@@ -5,12 +5,8 @@
         <%= f.input :description, label: "工作描述", input_html: { class: "form-control" }%>        
         <%= f.input :wage_upper_bound, label: "上線薪資", input_html: { class: "form-control" }%>        
         <%= f.input :wage_lower_bound, label: "最低薪資", input_html: { class: "form-control" }%>        
-        <%= f.input :contact_email, label: "聯絡Email", input_html: { class: "form-control" }%>        
-        
-        <% if false %>
-            <%= f.input :is_hidden, label: "是否在前台隱藏"%> 
-        <% end %>
-               
+        <%= f.input :contact_email, label: "聯絡Email", input_html: { class: "form-control" }%>                        
+        <%= f.input :is_hidden, label: "是否在前台隱藏"%>                        
     </div>
     <%= f.submit "送出", class: "btn btn-primary", data: {disable_with: "送出..."}%>
 <% end %>
