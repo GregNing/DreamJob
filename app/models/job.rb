@@ -11,6 +11,7 @@
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #  is_hidden        :boolean          default(FALSE)
+#  user_id          :integer
 #
 
 class Job < ApplicationRecord
@@ -22,6 +23,7 @@ class Job < ApplicationRecord
     scope :desc_by_wage_upper_bound, ->{ order("wage_upper_bound DESC") }
     scope :ishidden, ->{ where(is_hidden: false) }
     belongs_to :user
+    has_many :resumes, dependent: :destroy    
     def publish!
         self.is_hidden = false
         self.save

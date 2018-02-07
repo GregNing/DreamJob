@@ -6,8 +6,7 @@ class Admin::JobsController < ApplicationController
     def index
         @jobs = Job.all.desc_by_created.page(params[:page]).per(10)
     end
-    def show
-        
+    def show        
     end
     def new
         @job = Job.new

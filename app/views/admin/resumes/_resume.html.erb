@@ -1,0 +1,20 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+    <%= resume.user.email %>
+    </h3>
+  </div>
+  <div class="panel-body">
+    <%= simple_format(resume.content)%>
+    <hr/>
+    
+    <% if resume.attachment.present? %>
+    <i class="fa fa-paperclip"> </i>
+    <%= link_to "下載履歷", resume.attachment_url %>
+    <%= link_to(resume.id, admin_job_resume_path(@job,resume)) %>
+    <% else %>
+    尚未上傳履歷  
+    <% end %>
+    
+  </div>
+</div>
