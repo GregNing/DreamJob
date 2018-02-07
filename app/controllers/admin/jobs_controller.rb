@@ -2,6 +2,7 @@ class Admin::JobsController < ApplicationController
     before_action :authenticate_user!
     before_action :find_jos_id, except: [:index,:new,:create]
     before_action :require_is_admin
+    layout "admin"
     def index
         @jobs = Job.all.desc_by_created.page(params[:page]).per(10)
     end

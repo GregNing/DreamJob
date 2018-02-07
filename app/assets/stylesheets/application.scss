@@ -29,6 +29,27 @@
     margin: -20px auto; 
     opacity: 0.8;
 }
+
+.pull-right .btn-group:hover .dropdown-menu{
+    display: block;
+}
+
+.adminlayout .dropdown a{
+    background-color: #ebebeb;
+}
+
+.adminlayout .dropdown:hover a{
+    color: #fff;
+    background-color: #337ab7;
+}
+
+.nav.navbar-nav .dropdown:hover{
+     .dropdown-menu{
+    display: block;
+    }
+    background-color: #bcbcbc;
+}
+
 //---------Navbar---------
 
 .navbar-default {
@@ -72,7 +93,8 @@
 .navbar-default .navbar-nav > .open > a:hover {
     background-color:#bcbcbc;
     color: #212121;
-    // border-radius: 3%;
+    border-radius: 5px;
+
 }
 
 

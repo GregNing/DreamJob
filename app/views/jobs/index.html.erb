@@ -4,6 +4,19 @@
 <h3>求職列表
 
 <div class="pull-right">
+<!-- Single button -->
+<div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    排序 <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">    
+    <li><%= link_to "刊登時間", jobs_path(order: "descbycreated_at") %></li>
+      <li role="separator" class="divider"></li>
+    <li><%= link_to "最高薪資", jobs_path(order: "descbywage_upper_bound") %></li>
+      <li role="separator" class="divider"></li>
+    <li><%= link_to "起薪薪資", jobs_path(order: "descbywage_lower_bound") %></li>
+  </ul>
+</div>
     <%= link_to("新增工作機會", new_job_path, class: "btn btn-primary pull-right") %>
 </div>
 </h3>
@@ -15,8 +28,8 @@
     <tr>    
         <td>職業</td>
         <td>工作內容</td>
-        <td>上限薪資</td>
-        <td>最低薪資</td>        
+        <td>最高薪資</td>
+        <td>起薪薪資</td>        
         <td>刊登時間</td>
         <td>功能</td>
     </tr>

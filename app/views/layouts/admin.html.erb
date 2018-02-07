@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>求職網</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+  <body>  
+       <div class="container-fluid">  
+        <div class="row">       
+         <%= render "common/navbar" %>
+         <%= render 'common/flashes' %>
+          <div class="col-md-2">
+                 <ul class="nav adminlayout" style="max-width: 300px; padding-top:20px;">
+                <li class="active dropdown">
+                <%= link_to("管理員首頁", admin_jobs_path ) %> 
+                </li>                
+                </ul>                
+        </div>
+         <div class="col-md-10">
+            <%= yield %>      
+        </div>         
+       </div>
+       </div>     
+    <%= render 'common/footer' %>
+  </body>
+</html>
