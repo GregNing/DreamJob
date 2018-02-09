@@ -11,7 +11,8 @@ Rails.application.configure do
 
   # Show full error reports.
   config.consider_all_requests_local = true
-
+  #上測試環境之後如果javascript沒動作就要開啟因執行時沒壓縮成功
+  config.assets.debug = true
   # Enable/disable caching. By default caching is disabled.
   if Rails.root.join('tmp/caching-dev.txt').exist?
     config.action_controller.perform_caching = true

@@ -1,18 +1,20 @@
-<nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
+<nav class="navbar navbar-default navbar-fixed-top default-menu" role="navigation">
+    <div class="container-fluid container">
         <div class="navbar-header">
-        <a class="navbar-brand" href="/"><i class="fa fa-users" aria-hidden="true">            
-            求職網</i></a>
+        <a class="navbar-brand default_logo" href="/">
+        <%= image_tag 'logo.png', class: "logo_img", alt: "logo"%>
+                 
+            Dream Job</i></a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
                 
-                <% if !current_user %>        
-                <li><%= link_to "Sign in", new_user_registration_path %></li>
-                <li><%= link_to "Login", new_user_session_path %></li>
+                <% if !current_user %>                        
+                <li><%= link_to "Sign in", new_user_registration_path, class: "btn-welcome-auth" %></li>
+                <li><%= link_to "Login", new_user_session_path,class: "btn-welcome-auth" %></li>
                 <% if false %>
-                <li><a href="#" data-toggle="modal" data-target="#signup-modal">Sign in</a></li>
-                <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
+                <li><a href="#" class="btn-welcome-auth" data-toggle="modal" data-target="#signup-modal">Sign in</a></li>
+                <li><a href="#" class="btn-welcome-auth" data-toggle="modal" data-target="#login-modal">Login</a></li>
                 <% end %>                                        
                 <% else %>
                     <li class="dropdown">

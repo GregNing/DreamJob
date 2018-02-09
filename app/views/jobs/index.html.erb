@@ -17,7 +17,10 @@
     <li><%= link_to "起薪薪資", jobs_path(order: "descbywage_lower_bound") %></li>
   </ul>
 </div>
+
+<% if current_user %>
     <%= link_to("新增工作機會", new_job_path, class: "btn btn-primary pull-right") %>
+<% end %>    
 </div>
 </h3>
 </div>
