@@ -10,7 +10,7 @@
             <ul class="nav navbar-nav navbar-right">
                 
                 <% if !current_user %>                        
-                <li><%= link_to "Sign in", new_user_registration_path, class: "btn-welcome-auth" %></li>
+                <li><%= link_to "Sign up", new_user_registration_path, class: "btn-welcome-auth" %></li>
                 <li><%= link_to "Login", new_user_session_path,class: "btn-welcome-auth" %></li>
                 <% if false %>
                 <li><a href="#" class="btn-welcome-auth" data-toggle="modal" data-target="#signup-modal">Sign in</a></li>
