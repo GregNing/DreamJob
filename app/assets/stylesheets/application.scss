@@ -358,6 +358,7 @@ body{
     }
     .container .jobinfo{
         padding-left: 20%;
+        padding-top: 20px;
     }
     .linktoimg{
         text-align: left;
@@ -393,5 +394,19 @@ body{
     }
     a:hover{    
         color: #01b9b7;
+    }
+}
+//============ registrations
+.usercontainer{
+    background-image: image-url("registration/userregistrationbg.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+    height: 820px;
+    .usercontent{
+        margin: 8% 0 0 33%;
+        text-align: left;
+        background-color: #ffffff;
+        border-radius: 5%;
+        border: 2px solid #8d8d8d;
     }
 }
