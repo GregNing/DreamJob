@@ -1,15 +1,14 @@
+<!-- background -->
 <div class="usercontainer">
   <div class= "col-md-4 col-me-4 usercontent">
-<h2>Sign up</h2>
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
-
+<h2>註冊</h2>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>  
+<%= f.error_notification id: 'user_error_message', class: 'form_error' %>
   <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
+    <%= f.input :email,label: "信箱" ,required: true, autofocus: true %>
+    <%= f.input :password,label: "密碼" ,required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+    <%= f.input :password_confirmation,label: "密碼確認" ,required: true %>
   </div>
-
   <div class="form-actions">
     <%= f.button :submit, "Sign up" %>
   </div>
@@ -18,3 +17,4 @@
 <%= render "devise/shared/links" %>
   </div>
 </div>
+<!-- background end-->
