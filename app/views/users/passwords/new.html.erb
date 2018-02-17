@@ -9,7 +9,7 @@
   <% end %>
 
   <div class="form-inputs forgetpwdinputform">
-    <%= f.input :email,label: false , placeholder: "請輸入Email" , required: true, autofocus: true %>
+    <%= f.input :email,label: false , placeholder: "請輸入Email" , error: '請輸入Email', required: true, autofocus: true %>
   </div>    
   <div class="form-actions">
     <%= f.button :submit, "發送密碼重置信" %>

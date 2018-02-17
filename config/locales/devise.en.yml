@@ -1,6 +1,26 @@
 # Additional translations at https://github.com/plataformatec/devise/wiki/I18n
 
 en:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "請輸入電子郵件地址 !"
+              taken: "請使用不同的電子郵件地址 !"
+              invalid: "請輸入正確的電子郵件地址 !"
+            password:
+              too_short: "請輸入至少 %{count} 位數密碼 !"
+              blank: "請輸入密碼 !"
+              confirmation: "密碼不正確 !"
+            password_confirmation:
+              blank: "請輸入確認密碼 !"
+              confirmation: "密碼確認不正確 !"
+            first_name:
+              blank: "Please Specify First Name"
+            last_name:
+              blank: "Please Specify Last Name"
   devise:
     confirmations:
       confirmed: "此Email已經被註冊過"
@@ -45,9 +65,9 @@ en:
       update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirm link to confirm your new email address."
       updated: "Your account has been updated successfully."
     sessions:
-      signed_in: "Signed in successfully."
-      signed_out: "Signed out successfully."
-      already_signed_out: "Signed out successfully."
+      signed_in: "您已經成功登入!"
+      signed_out: "您已經成功登出!"
+      already_signed_out: "您已經成功登出!"
     unlocks:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."

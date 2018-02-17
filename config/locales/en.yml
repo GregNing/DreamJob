@@ -28,26 +28,5 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
-#en:
-  # hello: "Hello world"
 en:
-  activerecord:
-    errors:
-      models:
-        user:
-          attributes:
-            email:
-              blank: "請輸入電子郵件地址 !"
-              taken: "請使用不同的電子郵件地址 !"
-              invalid: "請輸入正確的電子郵件地址 !"
-            password:
-              too_short: "請輸入至少 %{count} 位數密碼 !"
-              blank: "請輸入密碼 !"
-              confirmation: "密碼不正確 !"
-            password_confirmation:
-              blank: "請輸入確認密碼 !"
-              confirmation: "密碼確認不正確 !"
-            first_name:
-              blank: "Please Specify First Name"
-            last_name:
-              blank: "Please Specify Last Name"
+  hello: "Hello world"

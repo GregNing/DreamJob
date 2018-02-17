@@ -24,7 +24,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  validates :nickname, presence: {message: "請輸入姓名!"}  
+  validates :nickname, presence: {message: "請輸入姓名!"}
+  validates :email, :email_format => { :message => 'is not Email-format' }  
   has_many :jobs, dependent: :destroy
   has_many :resumes
   def admin?
