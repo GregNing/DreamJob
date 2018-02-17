@@ -1,17 +1,26 @@
-<h2>Sign up</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
-
+<!-- background -->
+<div class="usercontainer">
+  <div class= "col-md-4 col-me-4 usercontent">
+<h2><i class="fa fa-user-circle-o"> 註冊 </i></h2>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>  
   <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
+    <%= f.input :nickname,label: false, placeholder: "請輸入姓名", require: true, autofocus: true %>
+    <%= f.input :email, label: false ,placeholder: '請輸入常用電子郵件地址' ,required: true, autofocus: true %>    
+    <% if false %>
+    <%= f.input :password,label: false ,placeholder: '請輸入6-12位數密碼' ,required: true, hint: ("最少需要 #{@minimum_password_length} 數密碼" if @minimum_password_length) %>
+    <%= f.error_notification id: 'user_error_message', class: 'form_error' %>
+    <% end %>        
+    <%= f.input :password,label: false ,placeholder: '請輸入6-12位數密碼' ,required: true %>
+    <%= f.input :password_confirmation,label: false ,placeholder: '再次輸入6-12位數密碼確認'  ,required: true %>
   </div>
-
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "註冊" %>
   </div>
 <% end %>
-
-<%= render "users/shared/links" %>
+    <div class="renderloginlink">
+      <hr/>
+      <%= render "users/shared/links" %>
+    </div>
+  </div>
+</div>
+<!-- background end-->

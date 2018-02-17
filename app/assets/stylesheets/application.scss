@@ -412,9 +412,72 @@ body{
         h2{
             text-align: center;
             line-height: 0;
+            padding: 12px 0;
         }
         a {
             text-decoration: none;
+        }
+        input[type=submit]{
+            background-color: #4267b2;
+            border-color: #4267b2;
+            background-repeat:no-repeat;
+            color: #fff;
+            font-size: 16px;   
+            padding: 8px 24px;
+        }
+        input[type=submit]:hover{
+            background-color: #2e487c;            
+            border-color: #2e487c;
+        }
+        .form-actions{
+            text-align: center;
+            margin: auto;
+        }
+        .alert.alert-danger.form_error{
+            position: absolute;
+            top: 0%;
+            left: 0;
+            right: 0;
+            background-color: #be4b49;
+            border: 0;
+            border-radius: 2px;
+            box-shadow: 0 0 0 1px rgba(139, 3, 0, .75), 0 1px 10px rgba(0, 0, 0, .35);
+            color: #fff;
+            font-size: 16px;
+            padding: 11px;
+        }
+        .renderloginlink{
+            margin: auto;
+            text-align: center;
+            font-family: inherit;
+            font-size: 16px;   
+            hr{
+            margin: 8px auto;
+            }
+            a{
+                display: block;
+            }
+            a.forgetpwd{
+                padding: 20px 0;
+            }
+        }
+        .form-inputs{
+            div{
+                height: 45px
+            }
+            .user_remember_me{
+                display: inline-block;                
+            }
+            .forgetpwd{
+                float: right;
+                margin-top: 8px;
+            }
+        }
+        .forgetpwdinputform{
+            padding-top: 5%;
+        }
+        .form-actions.forgetpwdinputform{
+            padding-top: 8%;
         }
     }
 }

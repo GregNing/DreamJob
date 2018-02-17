@@ -16,6 +16,7 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  is_admin               :boolean          default(FALSE)
+#  nickname               :string
 #
 
 class User < ApplicationRecord
@@ -23,6 +24,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  validates :nickname, presence: {message: "請輸入姓名!"}  
   has_many :jobs, dependent: :destroy
   has_many :resumes
   def admin?
