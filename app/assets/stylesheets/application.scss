@@ -87,15 +87,14 @@ body{
 
 .navbar-default.default-menu{
     border-color: #3b5998;    
-    border-radius: 3px;
-    background-color: #3b5998;
+    border-radius: 3px;    
     background-image: linear-gradient(#4e69a2, #3b5998 50%);
     border-bottom: 1px solid #133783;
     border-bottom: 0;
 }
 .navbar-default.default-menu .navbar-brand {
     color: #fff;
-    padding: 10px 15px;
+    padding: 10px 10px;
     line-height: 30px;
 }
 
@@ -105,7 +104,7 @@ body{
     background-color: transparent;
 }
 //------------Welcome.index 註冊以及登入按鈕------------
-.navbar-default .navbar-nav > li > a.btn-welcome-auth{    
+.navbar-default .navbar-nav.btn-welcome-nav > li a{    
     color: #fff;
     padding: 10px;
     vertical-align: middle;
@@ -113,19 +112,42 @@ body{
     border-radius: 5px;
     font-size: 17px;
 }
-
-.navbar-default.default-menu .navbar-nav > li > a:hover,
-.navbar-default.default-menu .navbar-nav > li > a:focus {    
+.navbar-default.default-menu .navbar-nav.btn-welcome-nav li:hover a {
     color: #01b9b7;
+}
+
+.navbar-default.default-menu .navbar-nav.btn-welcome-nav  {
+    li.dropdown:hover,
+    li.dropdown:focus{
+        border-color: #3b5998;
+        background-image: linear-gradient(#4e69a2, #3b5998 50%);
+        a.dropdown-toggle{
+            color: #01b9b7;
+        }
+        .dropdown-menu > li > a{
+            color: #343434;        
+        }
+        .dropdown-menu > li:hover,
+        .dropdown-menu > li > a:hover{
+            background-color: #5e7bbd;
+            background-image: none;
+            color: #fff;        
+            border-color: #5e7bbd;
+            background-image: none;
+        }
+    }
+}
+
+.navbar-default.default-menu .navbar-nav > .open > .dropdown-menu > li > a{
+    color: #343434;
 }
 
 .navbar-default.default-menu .navbar-nav > .open > a,
 .navbar-default.default-menu .navbar-nav > .open > a:focus,
 .navbar-default.default-menu .navbar-nav > .open > a:hover {
-    background-color:#bcbcbc;
-    color: #212121;
-    border-radius: 5px;
-
+    color: #01b9b7;
+    border-color: #3b5998;
+    background-image: linear-gradient(#4e69a2, #3b5998 50%);
 }
 
 //---------Box---------
@@ -396,7 +418,7 @@ body{
         color: #01b9b7;
     }
 }
-//============ registrations
+//============ 註冊 登入 忘記密碼 頁面
 .usercontainer{
     background-image: image-url("registration/userregistrationbg.jpg");
     background-repeat:no-repeat;
@@ -452,7 +474,7 @@ body{
             font-family: inherit;
             font-size: 16px;   
             hr{
-            margin: 8px auto;
+            margin: 8px auto;            
             }
             a{
                 display: block;
@@ -462,6 +484,8 @@ body{
             }
         }
         .form-inputs{
+            width: 250px;
+            margin: auto;
             div{
                 height: 45px
             }
@@ -473,11 +497,30 @@ body{
                 margin-top: 8px;
             }
         }
+        hr{
+            width: 250px;
+        }
         .forgetpwdinputform{
             padding-top: 5%;
         }
         .form-actions.forgetpwdinputform{
             padding-top: 8%;
+        }
+    }
+    .registrator{
+        .form-inputs{
+            .radio_buttons,
+            .user_password_confirmation{
+                height: auto;
+                margin-bottom: 0;
+            }
+            .user_password_confirmation{
+                margin-bottom: 5px;
+            }  
+        }
+        h2{
+            padding: 0;
+            margin: 12px auto;
         }
     }
 }
