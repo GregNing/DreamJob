@@ -4,11 +4,11 @@ class JobsController < ApplicationController
     def index
         @jobs = case params[:order]                                 
                 when "descbywage_upper_bound"
-                Job.all.ishidden.desc_by_wage_upper_bound.page(params[:page]).per(5)                
+                Job.all.isshow.desc_by_wage_upper_bound.page(params[:page]).per(5)                
                 when "descbywage_lower_bound"
-                Job.all.ishidden.desc_by_wage_lower_bound.page(params[:page]).per(5)                
+                Job.all.isshow.desc_by_wage_lower_bound.page(params[:page]).per(5)                
                 else
-                Job.all.ishidden.desc_by_created.page(params[:page]).per(5)
+                Job.all.isshow.desc_by_created.page(params[:page]).per(5)
                 end        
     end
     def show       

@@ -17,6 +17,7 @@
 #  updated_at             :datetime         not null
 #  is_admin               :boolean          default(FALSE)
 #  nickname               :string
+#  is_job_admin           :boolean          default(FALSE)
 #
 
 class User < ApplicationRecord
@@ -24,11 +25,28 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  validates :nickname, presence: {message: "請輸入姓名!"}
-  validates :email, :email_format => { :message => 'is not Email-format' }  
+  validates :nickname, presence: {message: "請輸入姓名!"}  
   has_many :jobs, dependent: :destroy
   has_many :resumes
+  has_many :collections
+  has_many :collected_jobs, through: :collections, source: :job
   def admin?
     self.is_admin
+  end
+  def job_admin?
+    self.is_job_admin
+  end
+  def is_colectedmember_of?(job)
+    collected_jobs.include?(job)
+  end
+
+  # 加入收藏
+  def add_collection!(job)
+    collected_jobs << job
+  end
+
+  # 移除收藏
+  def remove_collection!(job)
+    collected_jobs.delete(job)
   end
 end

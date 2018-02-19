@@ -13,10 +13,37 @@ Rails.application.routes.draw do
     end
     resources :resumes
     end
+    
+    resources :locations do
+      member do
+        post :publish
+        post :hide
+        post :up
+        post :down
+      end
+    end
+
+    resources :categories do
+      member do
+        post :publish
+        post :hide
+        post :up
+        post :down
+      end
+    end
   end
+
   resources :jobs do
-    resources :resumes 
-  end     
+    resources :resumes
+      member do
+        post :add
+        post :remove
+      end
+      collection do
+        get :search
+      end
+  end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root "welcome#index"
 end
