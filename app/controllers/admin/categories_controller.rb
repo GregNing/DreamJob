@@ -31,11 +31,11 @@ class Admin::CategoriesController < ApplicationController
 
     def publish      
       @category.publish!      
-      redirect_to :back
+      redirect_back fallback_location: root_path, notice: "發布 #{@category.name}成功"
     end
     def hide
       @category.hide!      
-      redirect_to :back
+      redirect_back fallback_location: root_path, notice: "隱藏 #{@category.name}成功"
     end
 
     #往上排序 此工作排序 -1

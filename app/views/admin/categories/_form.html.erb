@@ -5,10 +5,12 @@
       <%= f.input :name, :label => false, placeholder: '請輸入職位類型' %>
       <%= f.input :icon, :label => false, placeholder: '請輸入ICON代碼（例如：fa-home）' %>
       <hr />
-      <span><%= f.input :is_hidden, label: '隱藏職位', :input_html => { :checked => false } %></span>
+      <span><%= f.input :is_hidden, label: '隱藏職位' %></span>
     </div>
     <div class="form-actions">
       <%= f.submit "送出", disable_with: "Submiting...", class: "button"%>
+      <br/>      
+      <%= link_to "返回職位類型管理", admin_categories_path %>
     </div>
   <% end %>
 </div>

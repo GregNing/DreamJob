@@ -16,9 +16,9 @@
           <% if i%2 == 1%>
           <tr>
           <% end %>
-            <td class="name-box">#<%= category.sort %> <span class="<%= category.icon %>"></span> <%= category.name %></td>
+            <td class="name-box"><%= category.sort %> <span class="<%= category.icon %>"></span> <%= category.name %></td>
             <td class="action-box">
-              <!--=== 修改/隐藏/显示 ===-->
+              <!-- 修上移/下移/圖示 -->
               <div>
               <%= link_to(up_admin_category_path(category), :method => :post, class: "btn btn-md btn-default sort-btn") do %>
                 <span class="fa fa-angle-up"></span>
@@ -26,36 +26,33 @@
               <%= link_to(down_admin_category_path(category), :method => :post, class: "btn btn-md btn-default sort-btn") do %>
                 <span class="fa fa-angle-down"></span>
               <% end %>
-
-                <!--=== 如果系统预设锁定 ===-->
-                <% if category.is_lock %>
-                  <span class="fa fa-pencil btn btn-md btn-default lock-btn" disabled="disabled"></span>
-                  <span class="fa fa-eye-slash btn btn-md btn-default lock-btn" disabled="disabled"></span>
-
-                <!--=== 如果类型没有锁定 ===-->
-                <% else %>
-                  <%= link_to(edit_admin_category_path(category), class: "btn btn-md btn-default") do %>
-                    <span class="fa fa-pencil" disabled="disabled"></span>
-                  <% end %>
-
-                  <!--=== 如果类型隐藏 ===-->
-                  <% if category.is_hidden %>
-                    <%= link_to(publish_admin_category_path(category), :method => :post, class: "btn btn-md btn-default show-btn") do %>
-                      <span class="fa fa-eye"></span>
-                    <% end %>
-
-                  <!--=== 如果类型公开 ===-->
-                  <% else %>
-                    <%= link_to(hide_admin_category_path(category), :method => :post, class: "btn btn-md btn-default") do %>
-                      <span class="fa fa-eye-slash"></span>
-                    <% end %>
+              <!-- 修上移/下移/圖示 end -->              
+              <!--=== 鎖定 不可編輯===-->
+              <% if category.is_lock? %>
+              <span class="fa fa-pencil btn btn-md btn-default lock-btn" disabled="disabled"></span>
+              <span class="fa fa-eye-slash btn btn-md btn-default lock-btn" disabled="disabled"></span>
+              <!-- 類型無鎖定 可編輯-->
+              <% else %>
+                <%= link_to(edit_admin_category_path(category), class: "btn btn-md btn-default") do %>
+                  <span class="fa fa-pencil" disabled="disabled"></span>
                 <% end %>
               <% end %>
+              <!--=== 類型隱藏 ===-->
+              <% if category.is_hidden? %>
+                <%= link_to(publish_admin_category_path(category), :method => :post, class: "btn btn-md btn-default show-btn") do %>
+                <span class="fa fa-eye-slash"></span>
+                <% end %>
+              <!--=== 類型公開 ===-->
+              <% else %>
+                <%= link_to(hide_admin_category_path(category), :method => :post, class: "btn btn-md btn-default") do %>                  
+                  <span class="fa fa-eye"></span>
+                <% end %>
+              <% end %>              
               </div>
             </td>
-          <% if i%2 == 0%>
-          </tr>
-          <% end %>
+            <% if i%2 == 0%>
+              </tr>
+            <% end %>
           <% i += 1 %>
           <% end %>
         </tbody>
