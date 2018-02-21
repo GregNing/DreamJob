@@ -1,4 +1,16 @@
-<div style="text-align:center;"><h3><%= @job.title%>履歷列表 </h3></div>
-<hr/>
-<%= render partial: "resume", collection: @resumes, as: :resume %>
- 
+<div class="col-md-12 job-form">
+  <% if @resumes.length > 0 %>
+  <div class="col-md-10 col-md-offset-1 resume-form">
+    <h2> <%= @job.title %> - 履歷列表 </h2>
+    <hr>
+    <%= render :partial => "resume", :collection => @resumes, :as => :resume %>
+  </div>
+  <div class="col-md-12 job-bottom">
+    <div class="text-center">      
+      <%= paginate @resumes %>
+    </div>
+  </div>
+  <% else %>
+  <h2 class="no-job-data">此職缺尚未有人投遞履歷 <span class="fa fa-meh-o"></span></h2>
+  <% end %>
+</div>
