@@ -39,4 +39,8 @@ module JobsHelper
         "hidden-box"
         end
     end
+    def date_add8hour(job)
+        result = job.created_at + 8.hours
+        result.strftime("%Y年%m月%d日 %H:%M")
+    end
 end

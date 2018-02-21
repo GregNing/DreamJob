@@ -580,7 +580,13 @@ body{
 //================= admin jobs index
 .admin-content{
     .admin-select-job-box{
-        padding-top: 20px;
+        padding-top: 50px;
+        .dropdown.btn-group:nth-child(3) button{     
+            border-radius: 0 5px 5px 0;    
+        }
+        .dropdown.btn-group:nth-child(1) button{
+            border-radius: 5px 0 0 5px;
+        }
     }
     .admin-job-box{
         margin-top: 5px;
@@ -592,13 +598,21 @@ body{
                 font-size: 16px;
             }
             .job-list {
-                background-color: #efefef;                
+                background-color: #efefef;
+                a{
+                    text-decoration: none;
+                }         
             }
             .job-list:hover {
                 background-color: #f9f9f9;                
             }
-            tbody tr td{
-                vertical-align: middle;
+            tbody tr{
+                td{
+                    vertical-align: middle;
+                }
+                td:nth-child(6){
+                    text-align: center;
+                }
             }
         }
     }

@@ -118,7 +118,7 @@
           <span class="<%= render_job_collections(job) %>"></span> <%= job.collections.count %>
         </td>
         <!-- 發佈時間 -->
-        <td><%= job.created_at.strftime("%Y-%m-%d") %></td>
+        <td><%=  date_add8hour(job) %></td>
         <td>
           <!-- 修改/隱藏/icon -->
           <div class="action-box">
