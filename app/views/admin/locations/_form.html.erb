@@ -1,0 +1,15 @@
+<div class="col-md-10 col-md-offset-1">
+  <hr />
+  <%= simple_form_for [:admin,@location] do |f| %>
+    <div>
+      <%= f.input :name, :label => false, placeholder: '請輸入工作地點' %>
+      <hr />
+      <span><%= f.input :is_hidden, label: '隱藏工作地點' %></span>
+    </div>
+    <div class="form-actions">
+      <%= f.submit "送出", disable_with: "Submiting...", class: "button"%>
+      <br/>      
+      <%= link_to "返回工作地點", admin_locations_path %>
+    </div>
+  <% end %>
+</div>
