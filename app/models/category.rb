@@ -19,4 +19,12 @@ class Category < ApplicationRecord
     scope :isshow, -> { where(is_hidden: false) }
     scope :orderbysort, -> { order("sort ASC") }
     scope :descbysort, -> { order("sort DESC") }
+    def publish!
+        self.is_hidden = false
+        self.save
+    end
+    def hide!
+        self.is_hidden = true
+        self.save
+    end
 end

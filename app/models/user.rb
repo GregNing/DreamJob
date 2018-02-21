@@ -17,7 +17,7 @@
 #  updated_at             :datetime         not null
 #  is_admin               :boolean          default(FALSE)
 #  nickname               :string
-#  is_job_admin           :boolean          default(FALSE)
+#  is_dreamjob_admin      :boolean          default(FALSE)
 #
 
 class User < ApplicationRecord
@@ -33,8 +33,8 @@ class User < ApplicationRecord
   def admin?
     self.is_admin
   end
-  def job_admin?
-    self.is_job_admin
+  def dreamjob_admin?
+    self.is_dreamjob_admin
   end
   def is_colectedmember_of?(job)
     collected_jobs.include?(job)

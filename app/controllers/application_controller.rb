@@ -7,8 +7,8 @@ class ApplicationController < ActionController::Base
             redirect_to root_path,alert: "您無權限進行此操作!"
         end            
     end
-    def require_is_job_admin
-        unless current_user.job_admin?
+    def require_is_dreamjob_admin
+        unless current_user.dreamjob_admin?
             redirect_to root_path,alert: "您無權限進行此操作!"
         end            
     end

@@ -8,16 +8,29 @@
     <%= javascript_include_tag 'application' %>
   </head>
   <body>  
-       <div class="container-fluid">  
-        <div class="row">       
+       <div class="container-fluid admin-content">  
          <%= render "common/navbar" %>
          <%= render 'common/flashes' %>
-          <div class="col-md-2">
-                 <ul class="nav adminlayout" style="max-width: 300px; padding-top:20px;">
+        <div class="row">       
+          <div class="col-md-2 nav-sidebar">
+            <ul class="list-unstyled">
+               <li><%= link_to admin_jobs_path do %> <span class="fa fa-vcard-o"></span> <span>職位管理</span><% end %></li>
+               <% if current_user.dreamjob_admin? %>
+                 <li><%= link_to admin_locations_path do %> <span class="fa fa-location-arrow"></span> <span>工作地點管理</span><% end %></li>
+                 <li><%= link_to admin_categories_path do %> <span class="fa fa-cogs"></span> <span>職位類型管理</span><% end %></li>
+               <% end %>
+               <li><%= link_to admin_jobs_path do %> <span class="fa fa-file-text-o"></span> <span>頁面管理</span><% end %></li>
+               <li><%= link_to admin_jobs_path do %> <span class="fa fa-user-circle-o"></span> <span>帳號設定</span><% end %></li>
+            </ul>
+
+<% if false %>
+                   <ul class="nav adminlayout" style="max-width: 300px; padding-top:20px;">
                 <li class="active dropdown">
                 <%= link_to("管理員首頁", admin_jobs_path ) %> 
                 </li>                
-                </ul>                
+                </ul>   
+<% end %>
+             
         </div>
          <div class="col-md-10">
             <%= yield %>      

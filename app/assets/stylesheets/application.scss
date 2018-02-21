@@ -26,25 +26,18 @@ body{
     font-family:  Microsoft jhenghei;
 }
 .flashbar{
-    position: relative;
-    z-index: 1;
-    margin: -20px auto; 
+    position: absolute;
+    margin: -20px auto;
     opacity: 0.8;
+    left: 1%;
+    right: 1%;
+    z-index: 1;
 }
 
 .pull-right .btn-group:hover .dropdown-menu{
     display: block;
 }
 
-.adminlayout .dropdown a{
-    background-color: #ebebeb;
-    border-radius: 5px;
-}
-
-.adminlayout .dropdown:hover a{
-    color: #fff;
-    background-color: #337ab7;
-}
 
 .nav.navbar-nav .dropdown:hover{
      .dropdown-menu{
@@ -72,30 +65,28 @@ body{
 }
 
 //---------Navbar---------
-.default_logo{
-    letter-spacing: 1px;
-    line-height: 40px;
-    margin-right: 15px;
-}
-.default_logo .logo_img{
-    display: inline-block;
-    margin-right: 10px;
-    width: 35px;
-    height: 35px;
-    margin-top: -6px;
-}
 
 .navbar-default.default-menu{
-    border-color: #3b5998;    
+    border-color: #3b5998;
     border-radius: 3px;    
     background-image: linear-gradient(#4e69a2, #3b5998 50%);
     border-bottom: 1px solid #133783;
-    border-bottom: 0;
+    height: 65px;
+    box-shadow: 1px 1px 2px #133783;
+    -moz-box-shadow: 1px 1px 2px #133783;
+    -webkit-box-shadow: 1px 1px 2px #133783;
 }
-.navbar-default.default-menu .navbar-brand {
-    color: #fff;
-    padding: 10px 10px;
-    line-height: 30px;
+.navbar-default.default-menu .navbar-brand.default_logo {
+    color: #fff;    
+    margin-top: 4px;
+    font-size: 20px;    
+    .logo_img{
+        display: inline-block;
+        margin-right: 10px;
+        width: 35px;
+        height: 35px;
+        margin-top: -6px;
+    }
 }
 
 .navbar-default.default-menu .navbar-brand:hover,
@@ -105,15 +96,14 @@ body{
 }
 //------------Welcome.index 註冊以及登入按鈕------------
 .navbar-default .navbar-nav.btn-welcome-nav > li a{    
-    color: #fff;
-    padding: 10px;
+    color: #fff;    
     vertical-align: middle;
-    margin: 5px 5px;
+    margin: 7px 5px;
     border-radius: 5px;
-    font-size: 17px;
+    font-size: 18px;
 }
 .navbar-default.default-menu .navbar-nav.btn-welcome-nav li:hover a {
-    color: #01b9b7;
+    color: #c0c1ff;
 }
 
 .navbar-default.default-menu .navbar-nav.btn-welcome-nav  {
@@ -122,7 +112,7 @@ body{
         border-color: #3b5998;
         background-image: linear-gradient(#4e69a2, #3b5998 50%);
         a.dropdown-toggle{
-            color: #01b9b7;
+            color: #c0c1ff;
         }
         .dropdown-menu > li > a{
             color: #343434;        
@@ -145,7 +135,7 @@ body{
 .navbar-default.default-menu .navbar-nav > .open > a,
 .navbar-default.default-menu .navbar-nav > .open > a:focus,
 .navbar-default.default-menu .navbar-nav > .open > a:hover {
-    color: #01b9b7;
+    color: #c0c1ff;
     border-color: #3b5998;
     background-image: linear-gradient(#4e69a2, #3b5998 50%);
 }
@@ -524,9 +514,62 @@ body{
         }
     }
 }
+//================ admin layout
+.admin-content{
+    min-height: 425px;
+    margin-top: 85px;
+}
+
+.nav-sidebar{
+    margin-top: 50px;
+    .list-unstyled{
+        padding-left: 0;
+        list-style: none;        
+        li{            
+            border-color: #3b5998;
+            background-color: #486ebf;
+            border-bottom: 0.5px solid #133783;
+            max-width: 225px;
+            padding: 10px 12px;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            font-size: 15px;
+            a{
+                padding: 10px 84px 9px 0px;
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+        li:first-of-type{            
+            border-radius: 5px 5px 0 0;
+        }
+        li:last-of-type{            
+            border-radius: 0 0 5px 5px;
+        }
+        li:hover a{            
+            color: #01b9b7;
+        }
+    }
+}
+
 
 //================= jobs index
 .col-md-10.jobs-content{
     padding-top: 100px;
     min-height: 725px
+}
+
+//================== category
+.admin-form-content{
+    padding-top: 30px;
+    h2{
+        text-align: center;
+        margin-bottom: 0;
+    }
+}
+.admin-box{
+    padding-top: 2%;
+    .title-box{
+        text-align: center;
+    }
 }
