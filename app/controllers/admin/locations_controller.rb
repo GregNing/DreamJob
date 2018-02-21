@@ -27,14 +27,22 @@ class Admin::LocationsController < ApplicationController
             render :edit
         end
     end
-    def publish    
-        @location.publish!    
-        redirect_back fallback_location: root_path, notice: "發布 #{@location.name}成功"
+    def publish
+        if @location.is_hidden?          
+            @location.publish!
+            redirect_back fallback_location: root_path, notice: "發布 #{@location.name}成功"
+        else            
+            redirect_back fallback_location: root_path,alert: "#{@location.name} 已經隱藏!"
+        end                   
     end
 
     def hide
-        @location.hide!
-        redirect_back fallback_location: root_path, notice: "隱藏 #{@location.name}成功"        
+        if @location.is_hidden?          
+            redirect_back fallback_location: root_path,alert: "#{@location.name} 已經發布!"
+        else            
+            @location.hide!
+            redirect_back fallback_location: root_path, notice: "隱藏 #{@location.name}成功" 
+        end                
     end
     def up
     @locationoriginal = Location.find_by(sort: @location.sort - 1)

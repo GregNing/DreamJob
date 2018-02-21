@@ -50,12 +50,10 @@ class Admin::JobsController < ApplicationController
     def show        
     end
     def new
-        @job = Job.new
-        @categorys = Category.isshow.orderbysort
-        @locations = Location.isshow.orderbysort
+        @job = Job.new    
     end
     def create
-        @job = Job.new(jobs_params)
+        @job = Job.new(job_params)
         @job.user = current_user
         if @job.save
             redirect_to admin_jobs_path,notice: "新增#{@job.title}成功!"
@@ -68,7 +66,7 @@ class Admin::JobsController < ApplicationController
         @locations = Location.isshow.orderbysort
     end
     def update
-        if @job.update(jobs_params)
+        if @job.update(job_params)
             redirect_to admin_jobs_path,notice: "修改#{@job.title}成功!"
         else
             render :edit
@@ -80,18 +78,18 @@ class Admin::JobsController < ApplicationController
     end
     def publish
         if @job.is_hidden?          
-          @job.publish!
-          redirect_to admin_jobs_path ,notice: "#{@job.title}發布成功!"
+            @job.publish!            
+            redirect_back fallback_location: root_path, notice: "發布 #{@job.title}成功"
         else            
-        redirect_to admin_jobs_path ,alert: "已經隱藏!"
+            redirect_back fallback_location: root_path,alert: "已經發布!"            
         end        
     end
     def hide        
-        if @job.is_hidden?
-            redirect_to admin_jobs_path ,alert: "已經發布!"
+        if @job.is_hidden?            
+            redirect_back fallback_location: root_path,alert: "已經隱藏!" 
         else            
-            @job.hide!
-            redirect_to admin_jobs_path, warning: "#{@job.title}隱藏成功!"
+            @job.hide!            
+            redirect_back fallback_location: root_path, notice: "隱藏 #{@job.title}成功"
         end
     end
     private
@@ -102,9 +100,8 @@ class Admin::JobsController < ApplicationController
             redirect_to root_path, alert: "您沒有權限進行此操作。"
         end
     end
-    def jobs_params
-        params.require(:job).permit(
-        :title, :description, :company, :category_id, :location_id,
+    def job_params
+        params.require(:job).permit(:title, :description, :company, :category_id, :location_id,
         :wage_upper_bound, :wage_lower_bound,:contact_email, :is_hidden)
     end
 end

@@ -577,12 +577,89 @@ body{
 }
 
 
-//================= jobs index
-.col-md-10.jobs-content{
-    padding-top: 100px;
-    min-height: 725px
+//================= admin jobs index
+.admin-content{
+    .admin-select-job-box{
+        padding-top: 20px;
+    }
+    .admin-job-box{
+        margin-top: 5px;
+        min-height: 425px;
+        .table{
+            box-shadow: 0 0 5px #a4a4a4;
+            thead{
+                background-color: #efefef;
+                font-size: 16px;
+            }
+            .job-list {
+                background-color: #efefef;                
+            }
+            .job-list:hover {
+                background-color: #f9f9f9;                
+            }
+            tbody tr td{
+                vertical-align: middle;
+            }
+        }
+    }
 }
-
+//================== admin jobs edit new
+.job-form{
+    background: #f5f5f5;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    box-shadow: 1px 3px 5px #ebebeb;
+    border: 5px solid #ebebeb;
+    border-radius: 25px;
+    opacity: 0.8;
+    .job-form-content{
+        h2{
+            text-align: center;
+        }
+        hr{            
+            background-color: #8d8d8d;
+            display: block;
+            height: 1px;
+            border: 0;
+            border-top: 1px solid #ccc;
+            margin: 1em 0;
+            padding: 0;
+        }
+        .job-content-info{
+            height: 100px;
+        }
+        .job_form_bound{
+            font-size: 16px;
+            .bound{
+                width: 100px;
+                border-radius: 5px;
+                border: none;
+                padding: 0px 10px;
+            }
+            span{
+                color: #8d8d8d;
+            }
+        }
+        .form-actions{        
+            text-align: center;
+            input[type=submit]{
+                color: #fff;
+                background-color: #4A6BB5;
+                border-color: #4A6BB5;
+                letter-spacing: 1.4px;
+                width: 75%;
+                border-radius: 5px;
+                transition: all 0.2s ease-in;
+            }
+            input[type=submit]:hover {
+                background-color: #01b9b7;
+                border-color: #01b9b7;
+            }
+        }
+    }
+}
 //================== category
 .admin-form-content{
     padding-top: 30px;

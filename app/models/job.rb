@@ -24,7 +24,7 @@ class Job < ApplicationRecord
     validates :company, presence: { message: "請填寫公司名稱" }
     validates :category, presence: { message: "請選擇職位類型" }
     validates :location, presence: { message: "請選擇公司地點" }
-    validates_format_of :contact_mail, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i , message: "請輸入正確的信箱格式"
+    validates_format_of :contact_email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i , message: "請輸入正確的信箱格式"
 
     scope :desc_by_created, ->{ order("created_at DESC") }
     scope :desc_by_wage_lower_bound, ->{ order("wage_lower_bound DESC") }

@@ -29,13 +29,21 @@ class Admin::CategoriesController < ApplicationController
         end    
     end
 
-    def publish      
-      @category.publish!      
-      redirect_back fallback_location: root_path, notice: "發布 #{@category.name}成功"
+    def publish
+        if @category.is_hidden?          
+            @category.publish!      
+            redirect_back fallback_location: root_path, notice: "發布 #{@category.name}成功"
+        else                        
+            redirect_back fallback_location: root_path, alert: "#{@category.name} 已經發布!"
+        end 
     end
     def hide
-      @category.hide!      
-      redirect_back fallback_location: root_path, notice: "隱藏 #{@category.name}成功"
+        if @category.is_hidden?          
+            redirect_back fallback_location: root_path, alert: "#{@category.name} 已經隱藏!"
+        else                                    
+            @category.hide!      
+            redirect_back fallback_location: root_path, notice: "隱藏 #{@category.name}成功"
+        end       
     end
 
     #往上排序 此工作排序 -1

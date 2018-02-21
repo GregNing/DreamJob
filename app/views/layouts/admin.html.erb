@@ -21,16 +21,7 @@
                <% end %>
                <li><%= link_to admin_jobs_path do %> <span class="fa fa-file-text-o"></span> <span>頁面管理</span><% end %></li>
                <li><%= link_to admin_jobs_path do %> <span class="fa fa-user-circle-o"></span> <span>帳號設定</span><% end %></li>
-            </ul>
-
-<% if false %>
-                   <ul class="nav adminlayout" style="max-width: 300px; padding-top:20px;">
-                <li class="active dropdown">
-                <%= link_to("管理員首頁", admin_jobs_path ) %> 
-                </li>                
-                </ul>   
-<% end %>
-             
+            </ul>             
         </div>
          <div class="col-md-10">
             <%= yield %>      
