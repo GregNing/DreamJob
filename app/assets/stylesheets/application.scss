@@ -673,6 +673,40 @@ body{
             }
         }
     }
+    .no-job-data{
+        text-align: center;
+    }
+    .resume-form{
+        h2{
+            text-align: center;
+        }
+        .form-hrstyle{
+            background-color: #8d8d8d;
+            display: block;
+            height: 1px;
+            border: 0;
+            border-bottom: 1px solid #ccc;
+            margin: 1em 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+        }
+        .panel-title{
+            .resume-user-info{
+                color: #3a3a3a;
+                span:nth-child(2){
+                    color: #ff5b04;
+                }
+            }            
+        }
+        .trix-content{
+            color: #232323;
+            h4 span{
+            color: #515151;
+            }
+        }
+    }
 }
 //================== category
 .admin-form-content{

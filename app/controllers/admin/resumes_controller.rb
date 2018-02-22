@@ -13,8 +13,4 @@ class Admin::ResumesController < ApplicationController
         @job = Job.find(params[:job_id])
         @resumes = @job.resumes.desc_by_created.page(params[:page]).per(10)
     end
-
-    def show
-        @resume = Resume.find(params[:id])
-    end
 end

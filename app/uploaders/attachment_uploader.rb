@@ -12,9 +12,14 @@ class AttachmentUploader < CarrierWave::Uploader::Base
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
+  #正常使用無安全性
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
+  #安全性考量
+  # def store_dir
+  # "/PATH/RAILSAPPLICATION/uploads/#{model.id}"
+  # end
   # def cache_dir
   #   "/PATH/RAILSAPPLICATION/tmp/uploads/cache/#{model.id}"
   # end
