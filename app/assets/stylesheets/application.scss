@@ -81,6 +81,90 @@ body{
     .search-box .input-group-btn{
         width: 12%;
     }
+    .search-box{
+        input[type=text]{
+            border-radius: 3px;
+        }
+        input[type=text],
+        button{
+        background: #222;
+        background: -webkit-linear-gradient(#333, #222);
+        background: -moz-linear-gradient(#333, #222);
+        background: -o-linear-gradient(#333, #222);
+        background: -ms-linear-gradient(#333, #222);
+        background: linear-gradient(#333, #222);
+        border: 1px solid #444;
+        box-shadow: 0 2px 0 #000;
+        color: #888;
+        display: block;
+        float: left;
+        font-family: 'Cabin', helvetica, arial, sans-serif;
+        font-weight: 400;
+        margin: 0;
+        text-shadow: 0 -1px 0 #000;
+        }
+        input[type=text]:focus{
+        -webkit-animation: glow 800ms ease-out infinite alternate;
+        -moz-animation: glow 800ms ease-out infinite alternate;
+        -o-animation: glow 800ms ease-out infinite alternate;
+        -ms-animation: glow 800ms ease-out infinite alternate;
+        /*这里使用了呼吸动画*/
+        animation: glow 800ms ease-out infinite alternate;
+        background: #222922;
+        background: -webkit-linear-gradient(#333933, #222922);
+        background: -moz-linear-gradient(#333933, #222922);
+        background: -o-linear-gradient(#333933, #222922);
+        background: -ms-linear-gradient(#333933, #222922);
+        background: linear-gradient(#333933, #222922);
+        border-color: #393;
+        box-shadow: 0 0 5px rgba(141,141,0,.2), inset 0 0 5px rgba(235,235,0,.1), 0 2px 0 #545454;
+        color: #efe;
+        outline: none;
+        }
+        @-moz-keyframes glow {
+            0% {
+                border-color: #8d8d8d;
+                box-shadow: 0 0 5px rgba(141,141,0,.2), inset 0 0 5px rgba(235,235,0,.1), 0 2px 0 #545454;
+            }    
+            100% {
+                border-color: #ebebeb;
+                box-shadow: 0 0 20px rgba(141,141,0,.6), inset 0 0 10px rgba(235,235,0,.4), 0 2px 0 #545454;
+            }
+        }
+
+        @-o-keyframes glow {
+            0% {
+                border-color: #8d8d8d;
+                box-shadow: 0 0 5px rgba(141,141,0,.2), inset 0 0 5px rgba(235,235,0,.1), 0 2px 0 #545454;
+            }    
+            100% {
+                border-color: #ebebeb;
+                box-shadow: 0 0 20px rgba(141,141,0,.6), inset 0 0 10px rgba(235,235,0,.4), 0 2px 0 #545454;
+            }
+        }
+
+        @-ms-keyframes glow {
+            0% {
+                border-color: #8d8d8d;
+                box-shadow: 0 0 5px rgba(141,141,0,.2), inset 0 0 5px rgba(235,235,0,.1), 0 2px 0 #545454;
+            }    
+            100% {
+                border-color: #ebebeb;
+                box-shadow: 0 0 20px rgba(141,141,0,.6), inset 0 0 10px rgba(235,235,0,.4), 0 2px 0 #545454;
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                border-color: #8d8d8d;
+                box-shadow: 0 0 5px rgba(141,141,0,.2), inset 0 0 5px rgba(235,235,0,.1), 0 2px 0 #000;
+            }    
+            100% {
+                border-color: #ebebeb;
+                box-shadow: 0 0 20px rgba(141,141,0,.6), inset 0 0 10px rgba(235,235,0,.4), 0 2px 0 #000;
+            }
+        }
+    }
 }
 .navbar-default.default-menu{
     border-color: #3b5998;
