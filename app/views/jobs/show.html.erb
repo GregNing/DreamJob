@@ -1,27 +1,89 @@
+<div class="col-md-12 job-content">
+  <!--======== Start - Jobs上方區塊 =========-->
+  <div class="row">
+    <!--======== Start - 右側區塊 =========-->
+    <div class="col-md-7 col-md-offset-1 job-info-box">
+      <h1><%= @job.title %><span class="company">  / <%= @job.company %></span></h1>
+      <p>
+        <span class="bound"><%= @job.wage_lower_bound %> k ~ <%= @job.wage_upper_bound %> k </span> /
+        <span><span class="fa fa-map-marker"></span> <%= @job.location.name %></span> /
+        <span><span class="<%= @job.category.icon %>"> <%= @job.category.name %></span>
+       </p>
+      <p class="created"><%= date_add8hour(@job) %> <span class="website">由Dream Job所發布</span></p>
+    </div>
+    <!--======== End - 右側區塊 =========-->
 
-<div class="col-md-10 col-center">
-<div class="panel panel-default">
- <div class="panel-heading">
-    <h3 class="panel-title"><%= @job.title %> </h3>
+    <!--======== Start - 右側區塊 =========-->
+    <div class="col-md-3 job-action-box">
+      <div>
+        <!--==== 判断是否已收藏 ====-->
+        <% if current_user && current_user.is_colectedmember_of?(@job) %>
+          <%= link_to remove_job_path(@job), method: :post, class: "btn btn-lg btn-primary" do %>
+            <span class="fa fa-star"></span> 已收藏
+          <% end %>
+        <% else %>
+          <%= link_to add_job_path(@job), method: :post, class: "btn btn-lg btn-default" do %>
+            <span class="fa fa-star-o"></span> 收藏
+          <% end %>
+        <% end %>
+      </div>
+      <div>
+        <!--==== 判断是否投遞過履歷 ====-->
+        <% if @resumes.length > 0 %>
+          <%= link_to("已投遞過履歷", '#', class: "btn btn-lg btn-danger") %>
+        <% else %>
+          <%= link_to("投遞履歷", new_job_resume_path(@job), class: "btn btn-lg btn-success") %>
+        <% end %>
+      </div>
+    </div>
+    <!--======== End - 右側區塊 =========-->
   </div>
-<div class="panel-body">   
-<p><%= render_jobs_description(@job) %></p>
-<table class="table">
-<thead>
-<tr>
+  <!--======== End - Jobs上方 =========-->
+<hr style="width:85%" />
+  <!--======== Start - Jobs下方 =========-->
+  <div class="row">
+    <!--======== Start - 左側 =========-->
+    <div class="col-md-5 col-md-offset-1 job-content-box">
+      <div class="content-info">
+        <h4>職位描述：</h4>
+        <p><%= render_jobs_description(@job) %></p>
+      </div>
+      <hr />
+      <div class="mail-info">
+        <h4>聯絡信息: </h4>
+        <p class="email"><span class="fa fa-envelope"></span> <%= @job.contact_email %></p>
+        <%= link_to "回職缺頁面", jobs_path,  class: "btn btn-primary pull-right" %>
+      </div>
+    </div>
+    <!--======== End - 左側 =========-->
 
-<div class="text-center">
-<h3>  <%= link_to "投遞履歷", new_job_resume_path(@job) %></h3>
-</div>
-</tr>
-</thead>
-<tbody>
-
-</tbody>
-</table>
+    <!--======== Start - 右側區塊 =========-->
+    <% if @randomjobs.length > 0 %>
+    <div class="col-md-5">
+      <div class="randomjob-box">
+        <div class="title">
+          <span>相識職位</span>
+        </div>
+        <% @randomjobs.each do |job| %>
+          <div class="randomjob-content">
+            <div>
+              <h3>
+                <%= link_to job_path(job), target: "_blank" do %>
+                  <%= job.title.to_s + " - " + job.location.name.to_s %>
+                <% end %>
+              </h3>
+            </div>
+            <div><p><%= job.wage_lower_bound %> k ~ <%= job.wage_upper_bound %> k</p></div>
+            <div><span><%= job.company %></span></div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+    <!--======== End - 右側區塊 =========-->
   </div>
-<%= link_to "回首頁", root_path,  class: "btn btn-primary pull-right" %>
+  <!--======== End - Jobs下方 =========-->
 </div>
-</div>
+
  
   

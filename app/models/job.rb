@@ -35,7 +35,8 @@ class Job < ApplicationRecord
     scope :lowerbound15, -> { where('wage_lower_bound between 10 and 15 or wage_upper_bound between 10 and 15') }
     scope :lowerbound25, -> { where('wage_lower_bound between 15 and 25 or wage_upper_bound between 15 and 25') }
     scope :lowerbound30, -> { where('wage_lower_bound >= 25 or wage_upper_bound >= 25') }
-    scope :random5, -> { limit(5).order("RANDOM()") }
+    #隨機選擇5件
+    scope :random5, -> { where(is_hidden: false).limit(5).order("RANDOM()") }
     
     belongs_to :user
     belongs_to :location

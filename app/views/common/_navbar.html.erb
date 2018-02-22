@@ -30,6 +30,18 @@
                     </li>
                 <% end %>                    
             </ul>
+            <!--=== 搜索欄 ===-->
+            
+            <%= form_tag search_jobs_path, method: :get, class: "navbar-form navbar-right search-form" do %>
+            <div class="input-group search-box">         
+                <input type="text" class="form-control" name="keyword" placeholder="搜尋職位、公司、地點。" value="<%= params[:keyword] %>">
+            <div class="input-group-btn">           
+                <%= button_tag(type: "submit", class: "btn btn-default") do %>
+                    <i class="fa fa-search"></i>
+                <% end %>
+                </div>
+            </div>
+            <% end %>
         </div>
     </div>
 </nav>

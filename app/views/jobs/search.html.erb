@@ -1,0 +1,99 @@
+<!-- 無符合搜尋結果條件資料 -->
+<% if @jobs.blank?%>
+<div class="col-md-10 col-md-offset-1">
+  <div class="search-error">
+    <h2>沒有符合搜尋條件的資料！</h2><br />
+    <p><%= link_to("立即查看工作", jobs_path, class: "btn btn-lg btn-success") %></p>
+  </div>
+</div>
+<% else %>
+<!--=== 搜索结果，有有符合條件的數據 ===-->
+  <!--=== 搜索结果文字 ===-->
+<div class="col-md-10 col-md-offset-1 page-title">
+  <h1><span class="fa fa-search"></span> 搜索结果</h1>
+</div>
+
+<!--=== 搜索结果内容 ===-->
+<div class="col-md-10 col-md-offset-1 job-content" style="min-height: 600px;margin-top: 25px;">
+  <div class="row">
+    <!--=== 左側區塊 ===-->
+    <% @jobs.each do |job| %>
+    <div class="col-md-9 col-xs-12 job-box">
+      <!--=== 職位訊息 ===-->
+      <div class="col-md-6 col-xs-12 job-info">
+        <div class="info-top">
+          <h3><%= link_to(job.title, job_path(job), target: "_blank" )%></h3><span><%= date_add8hour(job) %></span>
+        </div>
+        <div class="job-info-money">
+          <%= job.wage_lower_bound.to_s + " k ~ "  + job.wage_upper_bound.to_s + " k" %>
+        </div>
+        <div class="job-info-cotegory">
+          <span class="category"><span class="<%= job.category.icon %>"> <%= job.category.name %></span>
+        </div>
+      </div>
+
+      <!--=== 公司信息 ===-->
+      <div class="col-md-6 col-xs-12 company">
+        <div class="company-top">
+          <span><%= link_to(job.company, job_path(job))%></span>
+          <% if current_user && current_user.is_colectedmember_of?(job) %>
+            <%= link_to remove_job_path(job), method: :post do %>
+              <span class="fa fa-star"></span>
+            <% end %>
+          <% else %>
+            <%= link_to add_job_path(job), method: :post do %>
+              <span class="fa fa-star-o"></span>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="company-contact">
+          <span class="fa fa-envelope"></span><span><%= job.contact_email %></span>
+        </div>
+        <div class="company-location">
+          <span class="fa fa-map-marker"></span><span><%= job.location.name %></span>
+        </div>
+      </div>
+    </div>
+    <% end %>
+
+    <!--=== 職位推薦：隨機推薦5個職位 ===-->
+    <div class="col-md-3 side-box">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1 recommand-title">
+              <span class="fa fa-tags"></span> <span>職位推薦</span>
+            </div>
+            <div class="row">
+            <% @recommand.each do |job| %>
+            <div class="col-xs-10 col-xs-offset-1 recommand-content">
+              <div>
+                <h3>
+                  <%= link_to job_path(job), target: "_blank" do %>                    
+                    <%= job.title.to_s + " - " + job.location.name.to_s %>
+                  <% end %>
+                </h3>
+              </div>
+              <div>
+                <p>
+                    <%= job.wage_lower_bound.to_s + " k ~ "  + job.wage_upper_bound.to_s + " k" %>
+                </p>
+              </div>
+              <div><span><%= job.company %></span></div>
+            </div>
+            <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--=== 換頁區塊 ===-->
+<div class="col-md-10 col-md-offset-1 job-bottom">
+  <div class="text-center">    
+     <%= paginate @jobs %>
+  </div>
+</div>
+<% end %>
