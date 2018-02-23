@@ -72,15 +72,15 @@ class JobsController < ApplicationController
         redirect_back fallback_location: root_path, warning: "#{@job.title}從喜愛工作移除成功!"
     end
 
-    def search
+    def search        
+        #隨機推薦5個職位
         @recommand = Job.random5
         if @query_string.present?        
-        #使用like 搜尋職位
-        search_result = Job.joins(:location).ransack(@search_criteria).result(distinct: true)
-        @jobs = search_result.isshow.page(params[:page]).per(10)
-        #隨機推薦5個職位                
+            #使用like 搜尋職位
+            search_result = Job.joins(:location).ransack(@search_criteria).result(distinct: true)
+            @jobs = search_result.isshow.page(params[:page]).per(8)            
         else
-            @jobs = Job.isshow.desc_by_created.page(params[:page]).per(8)
+            @jobs = Job.isshow.desc_by_created.page(params[:page]).per(8)            
         end
     end   
     private

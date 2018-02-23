@@ -22,9 +22,12 @@
                     </a>
                     <ul class="dropdown-menu">                                    
                         <% if current_user.admin?  %>
-                        <li><%= link_to "管理者頁面", admin_jobs_path %> </li>
+                        <li><%= link_to "企業專區", admin_jobs_path %> </li>
                         <li class="divider"> </li>
-                        <% end %>                                                                                               
+                        <% end %>            
+                        <li> <%= link_to "我的收藏工作", account_collections_path %> </li> 
+                        <li> <%= link_to "我的投遞歷史", account_resumes_path %> </li> 
+                        <li class="divider"> </li>
                         <li><%= link_to "登出", destroy_user_session_path,method: :delete %> </li>
                     </ul>
                     </li>
