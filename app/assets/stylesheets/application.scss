@@ -18,6 +18,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600,300);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,900,700,600,500,300,200,100,800);
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,700,300);
 .col-center{
     float: none;
     margin: 0 auto;
@@ -256,10 +262,8 @@ body{
 
 //---------Box---------
 
-.box {
-    background-image: url("dreamjobwelcomeIndex.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+.box {    
+    background: image_url("welcomeIndex.jpg") no-repeat scroll top center/ cover;
     margin-bottom: 50px;
     margin-top: 35px;
     height: 740px;
