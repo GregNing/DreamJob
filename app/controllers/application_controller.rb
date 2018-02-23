@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception
-    add_flash_types :warning    
+    add_flash_types :warning
    protected 
     def require_is_admin
         unless current_user.admin?

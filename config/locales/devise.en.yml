@@ -17,10 +17,8 @@ en:
             password_confirmation:
               blank: "請輸入確認密碼 !"
               confirmation: "密碼確認不正確 !"
-            first_name:
-              blank: "Please Specify First Name"
-            last_name:
-              blank: "Please Specify Last Name"
+            signed_in: "Custom signed in message"
+            signed_out: "Custom signed out message"
   devise:
     confirmations:
       confirmed: "此Email已經被註冊過"

@@ -44,6 +44,15 @@ body{
     display: block;
 }
 
+//=========== flashes for sessions view use
+.session-login-navbar{
+    position: absolute;
+    margin-top: 10%;
+    opacity: 0.8;
+    left: 21%;
+    right: 21%;
+    z-index: 1;
+}
 
 .nav.navbar-nav .dropdown:hover{
      .dropdown-menu{
@@ -81,6 +90,7 @@ body{
 }
 
 //---------Navbar---------
+
 .navbar-form.navbar-right.search-form {
     padding-right: 20%;    
     padding-top: 7px;
@@ -207,11 +217,15 @@ body{
     margin: 7px 5px;
     border-radius: 5px;
     font-size: 18px;
+    transition: all 0.2s ease-in;
 }
 .navbar-default.default-menu .navbar-nav.btn-welcome-nav li:hover a {
     color: #c0c1ff;
+    font-size: 16.7px
 }
-
+.navbar-default.default-menu .navbar-nav.btn-welcome-nav:last-of-type{
+    width: 16%;
+}
 .navbar-default.default-menu .navbar-nav.btn-welcome-nav  {
     li.dropdown:hover,
     li.dropdown:focus{

@@ -77,7 +77,7 @@ class JobsController < ApplicationController
         @recommand = Job.random5
         if @query_string.present?        
             #使用like 搜尋職位
-            search_result = Job.joins(:location).ransack(@search_criteria).result(distinct: true)
+            search_result = Job.ransack(@search_criteria).result(distinct: true)
             @jobs = search_result.isshow.page(params[:page]).per(8)            
         else
             @jobs = Job.isshow.desc_by_created.page(params[:page]).per(8)            
