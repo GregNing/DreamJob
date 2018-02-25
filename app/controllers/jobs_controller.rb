@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
     before_action :find_jobs_id, only: [:edit, :update, :destroy, :show]
-    before_action :authenticate_user!, except: [:index]
+    before_action :authenticate_user!, except: [:index, :search]
     before_action :validates_search_key, only: [:search]
     def index
         @locations = Location.isshow.orderbysort
@@ -58,8 +58,8 @@ class JobsController < ApplicationController
         unless current_user.is_colectedmember_of?(@job)
             current_user.add_collection!(@job)    
         end
-
-        redirect_back fallback_location: root_path, notice: "#{@job.title}儲存喜愛工作成功!"         
+         render "collection"
+        #redirect_back fallback_location: root_path, notice: "#{@job.title}儲存喜愛工作成功!"         
     end
     
     def remove
@@ -68,8 +68,8 @@ class JobsController < ApplicationController
         if current_user.is_colectedmember_of?(@job)
         current_user.remove_collection!(@job)
         end
-
-        redirect_back fallback_location: root_path, warning: "#{@job.title}從喜愛工作移除成功!"
+         render "collection"
+        #redirect_back fallback_location: root_path, warning: "#{@job.title}從喜愛工作移除成功!"
     end
 
     def search        

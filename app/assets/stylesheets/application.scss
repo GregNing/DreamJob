@@ -103,81 +103,103 @@ body{
         }
         input[type=text],
         button{
-        background: #222;
-        background: -webkit-linear-gradient(#333, #222);
-        background: -moz-linear-gradient(#333, #222);
-        background: -o-linear-gradient(#333, #222);
-        background: -ms-linear-gradient(#333, #222);
-        background: linear-gradient(#333, #222);
-        border: 1px solid #444;
-        box-shadow: 0 2px 0 #000;
-        color: #888;
+        background: linear-gradient(#e5e5e5, #d8d8d8);
+        background: #d8d8d8;
+        background: -webkit-linear-gradient(#e5e5e5, #d8d8d8);
+        background: -moz-linear-gradient(#e5e5e5, #d8d8d8);
+        background: -o-linear-gradient(#e5e5e5, #d8d8d8);
+        background: -ms-linear-gradient(#e5e5e5, #d8d8d8);        
+        color: #343434;        
+        text-shadow: 0 -1px 0 #ffffff;        
+        box-shadow: 0 1px 0 #d8d8d8;
+        border: 1px solid #f2f2f2;
+
+        // background: #222;
+        // background: -webkit-linear-gradient(#333, #222);
+        // background: -moz-linear-gradient(#333, #222);
+        // background: -o-linear-gradient(#333, #222);
+        // background: -ms-linear-gradient(#333, #222);
+        // background: linear-gradient(#333, #222);
+        // border: 1px solid #444;
+        // box-shadow: 0 2px 0 #000;
+        // text-shadow: 0 -1px 0 #000;
+        // color: #888;
+
         display: block;
         float: left;
         font-family: 'Cabin', helvetica, arial, sans-serif;
         font-weight: 400;
-        margin: 0;
-        text-shadow: 0 -1px 0 #000;
+        margin: 0;        
         }
         input[type=text]:focus{
         -webkit-animation: glow 800ms ease-out infinite alternate;
         -moz-animation: glow 800ms ease-out infinite alternate;
         -o-animation: glow 800ms ease-out infinite alternate;
         -ms-animation: glow 800ms ease-out infinite alternate;
-        /*这里使用了呼吸动画*/
+        /*這裡使用呼吸動畫*/
         animation: glow 800ms ease-out infinite alternate;
-        background: #222922;
-        background: -webkit-linear-gradient(#333933, #222922);
-        background: -moz-linear-gradient(#333933, #222922);
-        background: -o-linear-gradient(#333933, #222922);
-        background: -ms-linear-gradient(#333933, #222922);
-        background: linear-gradient(#333933, #222922);
-        border-color: #393;
-        box-shadow: 0 0 5px rgba(141,141,0,.2), inset 0 0 5px rgba(235,235,0,.1), 0 2px 0 #545454;
-        color: #efe;
+        background: #dadbda;
+        background: -webkit-linear-gradient(#dddedd, #dadbda);
+        background: -moz-linear-gradient(#dddedd, #dadbda);
+        background: -o-linear-gradient(#dddedd, #dadbda);
+        background: -ms-linear-gradient(#dddedd, #dadbda);
+        background: linear-gradient(#dddedd, #dadbda);
+        border-color: #dadbda;
+        color: #242424;
+        box-shadow: 0 0 5px rgba(209, 209, 195, 0.2), inset 0 0 5px rgba(223, 223, 208, 0.1), 0 2px 0 #545454;
+        // background: #222922;
+        // background: -webkit-linear-gradient(#333933, #222922);
+        // background: -moz-linear-gradient(#333933, #222922);
+        // background: -o-linear-gradient(#333933, #222922);
+        // background: -ms-linear-gradient(#333933, #222922);
+        // background: linear-gradient(#333933, #222922);
+        // border-color: #393;
+        // box-shadow: 0 0 5px rgba(141,141,0,.2), inset 0 0 5px rgba(235,235,0,.1), 0 2px 0 #545454;
+        // color: #efe;        
         outline: none;
         }
-        @-moz-keyframes glow {
-            0% {
-                border-color: #8d8d8d;
-                box-shadow: 0 0 5px rgba(141,141,0,.2), inset 0 0 5px rgba(235,235,0,.1), 0 2px 0 #545454;
-            }    
-            100% {
-                border-color: #ebebeb;
-                box-shadow: 0 0 20px rgba(141,141,0,.6), inset 0 0 10px rgba(235,235,0,.4), 0 2px 0 #545454;
-            }
-        }
+        // @-moz-keyframes glow {
+        //     0% {
+        //         border-color: #8d8d8d;
+        //         box-shadow: 0 0 5px rgba(141,141,0,.2), inset 0 0 5px rgba(235,235,0,.1), 0 2px 0 #545454;
+        //     }    
+        //     100% {
+        //         border-color: #ebebeb;
+        //         box-shadow: 0 0 20px rgba(141,141,0,.6), inset 0 0 10px rgba(235,235,0,.4), 0 2px 0 #545454;
+        //     }
+        // }
 
-        @-o-keyframes glow {
-            0% {
-                border-color: #8d8d8d;
-                box-shadow: 0 0 5px rgba(141,141,0,.2), inset 0 0 5px rgba(235,235,0,.1), 0 2px 0 #545454;
-            }    
-            100% {
-                border-color: #ebebeb;
-                box-shadow: 0 0 20px rgba(141,141,0,.6), inset 0 0 10px rgba(235,235,0,.4), 0 2px 0 #545454;
-            }
-        }
+        // @-o-keyframes glow {
+        //     0% {
+        //         border-color: #8d8d8d;
+        //         box-shadow: 0 0 5px rgba(141,141,0,.2), inset 0 0 5px rgba(235,235,0,.1), 0 2px 0 #545454;
+        //     }    
+        //     100% {
+        //         border-color: #ebebeb;
+        //         box-shadow: 0 0 20px rgba(141,141,0,.6), inset 0 0 10px rgba(235,235,0,.4), 0 2px 0 #545454;
+        //     }
+        // }
 
-        @-ms-keyframes glow {
-            0% {
-                border-color: #8d8d8d;
-                box-shadow: 0 0 5px rgba(141,141,0,.2), inset 0 0 5px rgba(235,235,0,.1), 0 2px 0 #545454;
-            }    
-            100% {
-                border-color: #ebebeb;
-                box-shadow: 0 0 20px rgba(141,141,0,.6), inset 0 0 10px rgba(235,235,0,.4), 0 2px 0 #545454;
-            }
-        }
+        // @-ms-keyframes glow {
+        //     0% {
+        //         border-color: #8d8d8d;
+        //         box-shadow: 0 0 5px rgba(141,141,0,.2), inset 0 0 5px rgba(235,235,0,.1), 0 2px 0 #545454;
+        //     }    
+        //     100% {
+        //         border-color: #ebebeb;
+        //         box-shadow: 0 0 20px rgba(141,141,0,.6), inset 0 0 10px rgba(235,235,0,.4), 0 2px 0 #545454;
+        //     }
+        // }
 
         @keyframes glow {
             0% {
                 border-color: #8d8d8d;
-                box-shadow: 0 0 5px rgba(141,141,0,.2), inset 0 0 5px rgba(235,235,0,.1), 0 2px 0 #000;
+                // box-shadow: 0 0 5px rgba(141,141,0,.2), inset 0 0 5px rgba(235,235,0,.1), 0 2px 0 #000;
+                box-shadow: 0 0 5px rgba(233, 233, 186, 0.2), inset 0 0 5px rgba(197, 197, 168, 0.1), 0 2px 0 #ebebeb;
             }    
             100% {
                 border-color: #ebebeb;
-                box-shadow: 0 0 20px rgba(141,141,0,.6), inset 0 0 10px rgba(235,235,0,.4), 0 2px 0 #000;
+                box-shadow: 0 0 20px rgba(201, 201, 182, 0.6), inset 0 0 10px rgba(155, 155, 130, 0.4), 0 2px 0 #ebebeb;
             }
         }
     }
