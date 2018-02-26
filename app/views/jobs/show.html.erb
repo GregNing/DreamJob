@@ -15,8 +15,8 @@
 
     <!--======== Start - 右側區塊 =========-->
     <div class="col-md-3 job-action-box">
-      <div id="collection-job-<%= @job.id  %>">
-        <%= render partial: "collection",locals: {job: @job} %>
+      <div id="collection-job-<%= @job.id %>" class="collection-job">
+        <%= render partial: "collection",locals: {job: @job } %>
       </div>
       <div>
         <!--==== 判断是否投遞過履歷 ====-->

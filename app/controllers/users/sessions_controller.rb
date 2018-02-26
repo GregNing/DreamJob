@@ -9,15 +9,7 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   # POST /resource/sign_in
-  def create   
-    # user = User.find_by(email: params[:user][:email])
-    # if user
-    #   if user.valid_password?(params[:user][:password]) 
-    #     sign_in_and_redirect user
-    #   else
-    #     flash[:alert] =  "Please enter the valid password."
-    #   end
-    # end        
+  def create     
     super
   end
 

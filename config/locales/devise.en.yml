@@ -27,7 +27,7 @@ en:
     failure:
       already_authenticated: "您已經登入"
       inactive: "Your account is not activated yet."
-      invalid: "Invalid %{authentication_keys} or password."
+      invalid: "請檢查%{authentication_keys}或是密碼."
       locked: "Your account is locked."
       last_attempt: "You have one more attempt before your account is locked."
       not_found_in_database: "Invalid %{authentication_keys} or password."

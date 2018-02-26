@@ -1,10 +1,12 @@
-<!--==== 判断是否已收藏 ====-->
-<% if current_user && current_user.is_colectedmember_of?(@job) %>
-  <%= link_to remove_job_path(@job), method: :post,remote: true , class: "btn btn-lg btn-primary" do %>
-    <span class="fa fa-star"></span> 已收藏
+<!--==== 判断是否已收藏 show ====-->
+  <% if current_user && current_user.is_colectedmember_of?(job) %>    
+    <%= link_to remove_job_path(job), method: :post,remote: true do %>
+      <span class="fa fa-star"></span>      
+    <% end %>
+  <% else %>
+   
+    <%= link_to add_job_path(job), method: :post,remote: true do %>
+      <span class="fa fa-star-o"></span>      
+    <% end %>
   <% end %>
-<% else %>
-  <%= link_to add_job_path(@job), method: :post,remote: true, class: "btn btn-lg btn-default" do %>
-    <span class="fa fa-star-o"></span> 收藏
-  <% end %>
-<% end %>
+<!--==== 判断是否已收藏 show end ====-->

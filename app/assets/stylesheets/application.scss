@@ -52,6 +52,10 @@ body{
     left: 21%;
     right: 21%;
     z-index: 1;
+    background-color: #d64242;
+    border-color: #d64242;
+    color: #FFF;
+    border-radius: 0 0 5px 5px;
 }
 
 .nav.navbar-nav .dropdown:hover{
@@ -987,6 +991,13 @@ body{
         div{
             display: inline-block;
         }
+        .collection-job{
+            vertical-align: middle;
+            font-size: 25px;
+            padding: 6px 16px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+        }
         div:last-of-type a{
             color: #fff;
             background-color: #6682c0;
@@ -1115,6 +1126,9 @@ body{
             }
             .company-top{
                 font-size: 18px;
+                div{
+                    display: inline-block;
+                }
             }
             .company-contact{
                 font-weight: bold;

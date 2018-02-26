@@ -58,7 +58,9 @@ class JobsController < ApplicationController
         unless current_user.is_colectedmember_of?(@job)
             current_user.add_collection!(@job)    
         end
-         render "collection"
+        
+        render "collection"        
+        
         #redirect_back fallback_location: root_path, notice: "#{@job.title}儲存喜愛工作成功!"         
     end
     
@@ -68,7 +70,9 @@ class JobsController < ApplicationController
         if current_user.is_colectedmember_of?(@job)
         current_user.remove_collection!(@job)
         end
-         render "collection"
+        
+        render "collection"
+        
         #redirect_back fallback_location: root_path, warning: "#{@job.title}從喜愛工作移除成功!"
     end
 

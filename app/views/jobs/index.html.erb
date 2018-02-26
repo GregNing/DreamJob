@@ -100,15 +100,9 @@
       <div class="col-md-6 col-xs-12 company">
         <div class="company-top">
           <span><%= link_to(job.company, job_path(job))%></span>
-          <% if current_user && current_user.is_colectedmember_of?(job) %>
-            <%= link_to remove_job_path(job), method: :post do %>
-              <span class="fa fa-star"></span>
-            <% end %>
-          <% else %>
-            <%= link_to add_job_path(job), method: :post do %>
-              <span class="fa fa-star-o"></span>
-            <% end %>
-          <% end %>
+          <div id="collection-job-<%= job.id %>">
+            <%= render partial: 'collection', locals: {job: job} %>          
+          </div>
         </div>
         <div class="company-contact">
           <span class="fa fa-envelope"></span><span><%= job.contact_email %></span>
