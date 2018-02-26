@@ -997,6 +997,10 @@ body{
             padding: 6px 16px;
             background-color: #f1f1f1;
             border-radius: 5px;
+            border: 1px solid #ebebeb;
+            a{
+                text-decoration: none;
+            }
         }
         div:last-of-type a{
             color: #fff;
@@ -1128,6 +1132,12 @@ body{
                 font-size: 18px;
                 div{
                     display: inline-block;
+                    background-color: #f1f1f1;
+                    border-radius: 5px;
+                    border: 1px solid #ebebeb;
+                    a{
+                        padding: 6px 10px;
+                    }
                 }
             }
             .company-contact{
