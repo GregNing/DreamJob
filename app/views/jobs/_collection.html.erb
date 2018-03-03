@@ -1,12 +1,18 @@
 <!--==== 判断是否已收藏 show ====-->
-  <% if current_user && current_user.is_colectedmember_of?(job) %>    
+<% if current_user %>
+  <% if current_user.is_colectedmember_of?(job) %>    
     <%= link_to remove_job_path(job), method: :post,remote: true do %>
       <span class="fa fa-star"></span>已儲存
     <% end %>
-  <% else %>
-   
+  <% else %>   
     <%= link_to add_job_path(job), method: :post,remote: true do %>
       <span class="fa fa-star-o"></span>儲存   
     <% end %>
   <% end %>
+<% else %>
+    <%= link_to new_user_registration_path do %>
+      <span class="fa fa-star-o"></span>儲存   
+    <% end %>
+<% end %>
+
 <!--==== 判断是否已收藏 show end ====-->

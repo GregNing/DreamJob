@@ -29,15 +29,16 @@ class User < ApplicationRecord
   has_many :jobs, dependent: :destroy
   has_many :resumes
   has_many :collections
-  has_many :collected_jobs, through: :collections, source: :job
+  has_many :collected_jobs, through: :collections, source: :job  
   def admin?
     self.is_admin
   end
   def dreamjob_admin?
     self.is_dreamjob_admin
   end
+  
   def is_colectedmember_of?(job)
-    collected_jobs.include?(job)
+      collected_jobs.include?(job)    
   end
 
   # 加入收藏
