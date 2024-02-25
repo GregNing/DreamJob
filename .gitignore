@@ -24,3 +24,4 @@
 public/uploads
 db/seeds.rb
 uploads
+/config/master.key
