@@ -1,4 +1,4 @@
-module Commonhelper
+module CommonHelper
     def searchs_job(params)
         #判斷塞選
         #公司地點
@@ -8,7 +8,7 @@ module Commonhelper
             if @location == "所有城市"
                 @jobs = Job.where(user: current_user).desc_by_created.page(params[:page]).per(10)
             else
-                @jobs = Job.where(user: current_user, location_id: @location_id).desc_by_created.page(params[:page]).per(10)            
+                @jobs = Job.where(user: current_user, location_id: @location_id).desc_by_created.page(params[:page]).per(10)
             end
         #公司地點 end
         #職業類型
@@ -37,6 +37,6 @@ module Commonhelper
         #預設全搜 但只搜尋自己所創建的工作
         else
             @jobs = Job.where(user: current_user).desc_by_created.page(params[:page]).per(10)
-        end 
+        end
     end
 end
